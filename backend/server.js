@@ -14,6 +14,15 @@ app.use("/api/user",require("./routes/userRoutes"));
 app.use("/api/post",require("./routes/postRoutes"));
 //app.use("/api/people",require("./routes/peopleRoutes"));
 
+
+if(process.env.NODE_ENV === 'PRODUCTION'){
+    app.use(express.static(path.join(__dirname,'../frontend/build')));
+
+    app.get('*', (req,res)=>{
+        res.sendFile(path.join(__dirname,'../', 'frontend', 'build', 'index.html'));
+    });
+}
+
 //start server
 const PORT =  process.env.PORT || 5000;
 
