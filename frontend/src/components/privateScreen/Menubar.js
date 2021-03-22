@@ -27,9 +27,9 @@ const Menubar = () => {
         <LinkContainer to="/home">
             <Nav.Link><i className="fas fa-home"></i> Home</Nav.Link>
         </LinkContainer>
-        <LinkContainer to="/profile">
+        {/* <LinkContainer to="/profile">
             <Nav.Link><i className="fas fa-user"></i> Profile</Nav.Link>
-        </LinkContainer>
+        </LinkContainer> */}
         <Button type="button" onClick={logoutHandler} className="btn btn-light"><i className="fas fa-sign-out-alt"></i> Logout</Button>
     </Nav>
   </Navbar.Collapse>
